@@ -1,0 +1,17 @@
+<div 
+    class="container"
+    *ngFor="let option of options; let i = index"
+    (click)="changeFilterState(option.value, i)"
+>
+    <div class="container--button {{(option.active ? 'active' : '')}}">
+        <img
+            *ngIf="option.active"
+            src={{checkIcon}} 
+            alt=""
+        >
+    </div>
+
+    <div class="container--value">
+        <h3>{{option.value}}</h3>
+    </div>
+</div>

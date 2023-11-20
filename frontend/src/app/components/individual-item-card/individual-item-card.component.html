@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="container--amount">
+        <h2>{{quantity}}</h2>
+    </div>
+    <div class="container--image">
+        <img src="../../../assets/images/{{imageUrl}}.webp" alt="">
+    </div>
+    <div class="container--text">
+        <h1>{{name}}</h1>
+        <p>{{quote}}</p>
+    </div>
+    <div class="container--action">
+        <app-button
+            type="primary"
+            size="large"
+            placeholder="Update"
+            (click)="buttonClick(true)"
+        />
+    </div>
+</div>

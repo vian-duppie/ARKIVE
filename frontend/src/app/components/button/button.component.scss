@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    font-size: 16px;
+    
+    &.primary {
+        display: block;
+        background-color: #C86350;
+        border-radius: 500px;
+        color: #FFFFFF;
+        
+        &.small {
+            padding: 6px 12px;
+        }
+
+        &.medium {
+            padding: 8px 20px;
+        }
+
+        &.large {
+            padding: 12px 24px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &.secondary {
+        background-color: #A3C4E8;
+        border-radius: 500px;
+        color: #000C1A;
+
+        &.small {
+            padding: 6px 12px;
+        }
+
+        &.medium {
+            padding: 8px 20px;
+        }
+
+        &.large {
+            padding: 12px 24px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &.tertiary {
+        color: #2F80ED;
+        opacity: 0.7;
+        
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+            text-decoration: underline;
+        }
+    }
+}

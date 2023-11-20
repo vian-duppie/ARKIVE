@@ -1,0 +1,14 @@
+<div 
+    class="container"
+    *ngFor="let option of options; let i = index"
+    (click)="filter(option.value, i)"
+>
+    <div class="container--button {{(option.active ? 'active' : '')}}">
+
+    </div>
+
+    <div class="container--value">
+        <h3>{{option.value}}</h3>
+    </div>
+</div>
+

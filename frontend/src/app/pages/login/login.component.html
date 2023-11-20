@@ -1,0 +1,60 @@
+
+
+<!-- This is the outer container -->
+<div class="container">
+    <div class="container__image">
+        <img
+            src='../../../assets/logo/logo_orange.svg'
+            alt='Arkive Logo'
+        />
+    </div>
+
+    <div class="container__heading">
+        <h1>LOG IN HERE</h1>
+    </div>
+
+    <div class="container__subheading">
+        <h2>Log in by entering your secret code (check your email)</h2>
+    </div>
+
+    <div class="container__form">
+        <app-input
+        [props]="{
+            label: 'Secret Code',
+            message: error,
+            placeholder: 'Secret Code',
+            style: 'line',
+            type: 'password',
+            error: error != '' ? 'error' : '',
+            messageSrc: '../../../assets/icons/ic_warning.svg'
+        }"
+        (valueChange)="onTextChanged($event)"
+    />
+    </div>
+
+    <div class="container__actions">
+        <app-button
+            (click)='loginUser()'
+            placeholder='Login'
+            size='large'
+            type='primary'
+        />
+
+        <div class="container__actions--secondary">
+            <p>Don't have an account?</p>
+                <app-button
+                    (click)='onNavigate( "/register" )'
+                    placeholder='Sign Up'
+                    type='tertiary'
+                />
+            
+        </div>
+    </div>
+
+    <div class="container__backgroundImage">
+        <img
+            src='../../../assets/background/background-image.svg'
+            alt='Arkive Logo'
+        />
+    </div>
+</div>

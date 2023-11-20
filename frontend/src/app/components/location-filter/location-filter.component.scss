@@ -1,0 +1,49 @@
+@import '../../../styles.scss';
+
+.container {
+    width: 320px;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        border-bottom: 1px solid #DADADA;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            cursor: pointer;
+            color: #EB5757;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .active {
+        background-color: #3D555E;
+        color: #FFFFFF;
+    }
+
+    &__filter {
+        padding: 15px 20px;
+
+
+        h2 {
+            font-size: 16px;
+            font-weight: 400;
+
+            &::first-letter {
+                text-transform: capitalize;
+            }
+        }
+    }
+}

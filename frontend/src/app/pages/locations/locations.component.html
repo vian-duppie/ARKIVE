@@ -1,0 +1,39 @@
+<div 
+    class="page--container"
+    >
+    <div class="page--container--top">
+        <div class="page--container--top--left">
+            <app-location-legend
+                [locations]="locations"
+            /> 
+
+            <app-button
+                type="primary"
+                size="small"
+                placeholder="Manage Locations"
+                (click)="openModal()"
+            />
+        </div>
+        <div class="page--container--top--right">
+            <img
+                src="../../../assets/images/The_Island_Topographic_Map.png"
+            />
+            <div
+                *ngFor="let location of locations; let i = index"
+                [ngStyle]="{'left': location.latitude + '%', 'top':location.longitude + '%', 'background-color': location.color}"
+            >
+                <div class="locationDetails">
+                    <p>Name: {{location.name}}</p>
+                    <p>Latitude: {{location.latitude}}</p>
+                    <p>Longitude: {{location.longitude}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-add-location-modal
+    *ngIf="showModal"
+    (closeModalEvent)="closeModal()"
+    userId={{userId}}
+    [locations]="locations"
+/>

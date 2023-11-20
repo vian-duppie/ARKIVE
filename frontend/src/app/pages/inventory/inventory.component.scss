@@ -1,0 +1,43 @@
+@import '../../../styles.scss';
+
+:host {
+    display: contents;
+}
+
+.container {
+    background-color: #F4F4F4;
+    display: flex;
+    gap: 50px;
+    flex: 1;
+    padding: 50px 100px; 
+
+    &--left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &--right {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+
+        &--card {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        &--action {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+    }
+}
+
+.app-individual-item-card {
+    flex: 1 1 auto; /* Allow items to grow and shrink equally */
+}

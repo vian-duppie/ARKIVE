@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="container--content">
+        <div 
+            class="container--content__close"
+            (click)="closeModal()"
+        >
+            <img src="../../../assets/icons/ic_close.svg" alt="">
+        </div>
+        <div class="container--content__details">
+            <div class="container--content__details--left">
+                <img src="../../../assets/images/{{item.image_url}}.webp" alt="">
+            </div>
+            <div class="container--content__details--right">
+                <div class="container--content__details--right--top">
+                    <div class="container--content__details--right--top__left">
+                        <!-- <h1>{{item.name}}</h1> -->
+                    </div>
+                    <div class="container--content__details--right--top__right">
+                        <div class="container--content__details--right--top__right--pill">
+                            <img src="../../../assets/icons/ic_weight.svg" alt="">
+
+                            <h2>{{item.weight}}</h2>
+                        </div>
+                        <div 
+                            class="container--content__details--right--top__right--pill"
+                            *ngIf="item.category.length > 0"
+                        >
+                            <h2>{{item.category.length > 0 ? item.category[0] : ''}}</h2>
+                        </div>
+                        <div 
+                            class="container--content__details--right--top__right--pill"
+                            *ngIf="item.rarity != ''"
+                        >
+                            <h2>{{item.rarity}}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div 
+                    class="container--content__details--right--description"
+                    *ngIf="item.quote !== ''"
+                >
+                    <p>{{item.quote}}</p>
+                </div>
+                <div 
+                    class="container--content__details--right--location"
+                    *ngIf="item.user_inventory.length > 0 && item.user_inventory[0].locations.length > 0"
+                >
+                    <div class="container--content__details--right--location__left">
+                        <h4>LOCATION NAME</h4>
+                        <div class="container--content__details--right--location__left--content">
+                            <div
+                                *ngFor="let location of item.user_inventory[0].locations; let i = index"
+                            >
+                                {{location.name}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container--content__details--right--location__right">
+                        <h4>AMOUNT</h4>
+                        <div class="container--content__details--right--location__right--content">
+                            <div
+                                *ngFor="let location of item.user_inventory[0].locations; let i = index"
+                            >
+                                {{location.quantity}} 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container--content__details--right--location__add">
+                    <div class="container--content__details--right--location__add--header">
+                        <h4>Add/Remove amount from location</h4>
+                    </div>
+                    <div class="container--content__details--right--location__add--input">
+                        <select [(ngModel)]="selectedOption">
+                            <option value={{locations[0].name}} disabled>Select an Location:</option>
+                            <option *ngFor="let option of locations" [value]="option._id">{{ option.name }}</option>
+                        </select>
+
+                        <input
+                            type="number"
+                            placeholder="Enter amount"
+                            [(ngModel)]="quantityToAdd" 
+                        />
+                    </div>
+                    <div class="container--content__details--right--location__add--action">
+                        <app-button
+                            type="primary"
+                            size="small"
+                            placeholder="Edit Amount"
+                            (click)="onSubmit(item._id)"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

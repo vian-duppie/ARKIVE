@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #F4F4F4;
+    
+    &::-webkit-scrollbar {
+        width: 8px;
+      }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: #33DEBC;    
+        border-radius: 20px;       
+    }
+}
+
+@font-face {
+    font-family: "NexaRustSans";
+    src: local("NexaRustSans"), url(./assets/fonts/NexaRustSans.ttf) format("truetype")
+}

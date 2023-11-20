@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="container__heading">
+        <h1>Locations Legend</h1>
+    </div>
+    <div 
+        class="container__filter"
+        *ngFor="let location of locations; let i = index"
+    >
+        <div 
+            class="legend_circle"
+            [ngStyle]="{'background-color': location.color, 'border': 'solid 1px black'}"
+        >
+
+        </div>
+        <h2>{{location.name}}</h2>
+    </div>
+</div>

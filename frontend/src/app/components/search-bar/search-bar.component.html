@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="container--search--input">
+        <input 
+            placeholder="Search for tools, armor, food..."
+            [(ngModel)]="inputValue"
+            (ngModelChange)="onInputChange()"
+        />
+    </div>
+    <div 
+        class="container--search--action"
+        (click)="searchItem(inputValue)"
+    >
+        <img 
+            src="../../../assets/icons/ic_search.svg" 
+            alt="">
+    </div>
+</div>

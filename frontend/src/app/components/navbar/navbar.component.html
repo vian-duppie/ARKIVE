@@ -1,0 +1,24 @@
+<nav>
+    <a 
+        class="logo" 
+        [routerLink]="['/']"
+    >
+            <img [src]="logoUrl">
+    </a>
+    <div class="links">
+        <a 
+            *ngFor="let link of links" 
+            routerLink={{link.url}}
+            routerLinkActive="active" 
+            ariaCurrentWhenActive="page"
+        >
+            {{ link.text }}
+        </a>
+    </div>
+    <a
+        [routerLink]="['/login']"
+        (click)="logout()"
+    >
+        <h5>Logout</h5>
+    </a>
+  </nav>

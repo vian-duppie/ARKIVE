@@ -1,0 +1,81 @@
+<!-- This is the outer container -->
+<div class="container">
+    <div class="container__image">
+        <img
+            src='../../../assets/logo/logo_green.svg'
+            alt='Arkive Logo'
+        />
+    </div>
+
+    <div class="container__heading">
+        <h1>SIGN UP HERE</h1>
+    </div>
+
+    <div class="container__subheading">
+        <h2>Complete the form below to create your Arkive account</h2>
+    </div>
+
+    <div class="container__form">
+        <app-input
+            [props]="{
+                label: 'Name',
+                message: errors.name,
+                placeholder: 'Enter your name',
+                style: 'line',
+                type: 'text',
+                error: errors.name != '' ? 'error' : '',
+                messageSrc: '../../../assets/icons/ic_warning.svg'
+            }"
+            (valueChange)="onTextChanged($event, 'name')"
+        />
+        <app-input
+            [props]="{
+                label: 'Email',
+                message: errors.email,
+                placeholder: 'Enter your email address',
+                style: 'line',
+                type: 'text',
+                error: errors.email != '' ? 'error' : '',
+                messageSrc: '../../../assets/icons/ic_warning.svg'
+            }"
+            (valueChange)="onTextChanged($event, 'email')"
+        />
+        <app-input
+            [props]="{
+                label: 'Password',
+                message: errors.password,
+                placeholder: 'Create a password',
+                style: 'line',
+                type: 'password',
+                error: errors.password != '' ? 'error' : '',
+                messageSrc: '../../../assets/icons/ic_warning.svg'
+            }"
+            (valueChange)="onTextChanged($event, 'password')"
+        />
+    </div>
+
+    <div class="container__actions">
+        <app-button
+            (click)='registerUser()'
+            placeholder='Sign Up'
+            size='large'
+            type='primary'
+        />
+
+        <div class="container__actions--secondary">
+            <p>Already have an account?</p>
+                <app-button
+                    (click)='onNavigate( "/login" )'
+                    placeholder='Login'
+                    type='tertiary'
+                />
+        </div>
+    </div>
+
+    <div class="container__backgroundImage">
+        <img
+            src='../../../assets/background/background-image-left.svg'
+            alt='Arkive Logo'
+        />
+    </div>
+</div>

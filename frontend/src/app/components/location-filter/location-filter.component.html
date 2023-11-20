@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="container__heading">
+        <h1>Refine by Location</h1>
+        <p (click)="clearLocationFilter(true)">Clear all</p>
+    </div>
+    <div 
+        class="container__filter {{(location.active ? 'active' : '')}}"
+        *ngFor="let location of locations; let i = index"
+        (click)="filterLocation(location.name, i, location._id)"
+    >
+        <h2>{{location.name}}</h2>
+    </div>
+</div>

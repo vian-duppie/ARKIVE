@@ -1,0 +1,74 @@
+@import '../../../styles.scss';
+
+:host {
+    display: contents;
+}
+
+.page--container {
+    background-color: red;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    padding: 50px 100px;
+
+    &--top {
+        display: flex;
+        gap: 50px;
+
+        &--left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &--right {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            inset: 0 100% 100% 0;
+
+            div {
+                position: absolute;
+                border-radius: 50%;
+                z-index: 5;
+                width: 20px;
+                height: 20px;
+                border: 2px solid white;
+
+                .locationDetails {
+                    display: none;
+                }
+
+                &:hover {
+                    .locationDetails {
+                        width: max-content;
+                        position: relative;
+                        left: 20px;
+                        height: fit-content;
+                        border-radius: 15px;
+                        border: none;
+                        background-color: #F4F4F4;
+                        padding: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        p {
+                            width: fit-content;
+                        }
+                    }
+                }
+
+            }
+            
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    
+}

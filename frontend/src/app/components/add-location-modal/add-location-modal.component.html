@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="container--content">
+        <div 
+            class="container--content__close"
+            (click)="closeModal()"
+        >
+            <img src="../../../assets/icons/ic_close.svg" alt="">
+        </div>
+        <div class="container--content__details">
+            <div class="container--content__details--right">
+                <div class="container--content__details--right--location__add">
+                    <div class="container--content__details--right--location__add--header">
+                        <h4>Add Location</h4>
+                    </div>
+                    <div class="container--content__details--right--location__add--input">
+                        <select [(ngModel)]="selectedColor">
+                            <option value={{colors[0]}} disabled>Select a Color:</option>
+                            <option *ngFor="let color of colors" [value]="color">{{color | uppercase}}</option>
+                        </select>
+
+                        <input
+                            type="text"
+                            placeholder="Enter Name"
+                            [(ngModel)]="locationName" 
+                        />
+                        <input
+                            maxlength=3
+                            min="0" 
+                            max="100"
+                            type="number"
+                            placeholder="Enter Longitude"
+                            [(ngModel)]="locationLong" 
+                        />
+                        <input
+                            maxlength=3
+                            min="0" 
+                            max="100"
+                            type="number"
+                            placeholder="Enter Latitude"
+                            [(ngModel)]="locationLat" 
+                        />
+
+                        <app-button
+                            type="primary"
+                            size="small"
+                            placeholder="Add Location"
+                            (click)="addNewLocation()"
+                        />
+                    </div>
+                </div>
+                <div class="container--content__details--right--location__add">
+                    <div class="container--content__details--right--location__add--header">
+                        <h4>Delete Location</h4>
+                    </div>
+                    <div class="container--content__details--right--location__add--input">
+                        <select [(ngModel)]="selectedOption">
+                            <option value={{locations[0]?.name}} disabled>Select an Location:</option>
+                            <option *ngFor="let option of locations" [value]="option._id">{{ option.name }}</option>
+                        </select>
+
+                        <app-button
+                            type="primary"
+                            size="small"
+                            placeholder="Delete Location"
+                            (click)="deleteLocation()"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

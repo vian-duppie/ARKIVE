@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+
+:host {
+    display: contents;
+}
+
+.page--container {
+    background-color: red;
+    display: flex;
+    flex: 1;
+}

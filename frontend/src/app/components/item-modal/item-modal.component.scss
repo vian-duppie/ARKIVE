@@ -1,0 +1,182 @@
+@import '../../../styles.scss';
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(215, 215, 215, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--content {
+        max-width: 800px;
+        background-color: #FFFFFF;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__close {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            img {
+                width: 30px;
+            }
+        }
+
+        &__details {
+            display: flex;
+            gap: 30px;
+
+            &--left {
+                img {
+                    width: 200px;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+
+            &--right {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                &--top {
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+
+                    &__right {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+
+                        &--pill {
+                            height: 24px;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            border: 1px solid #DADADA;
+                            border-radius: 23px;
+                            padding: 4px 10px;
+
+                            img {
+                                width: 24px;
+                                height: 24px;
+                                object-fit: contain;
+                            }
+
+                            h2 {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+
+                &--location {
+                    display: flex;
+                    flex: 1;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    border: 1px solid #DADADA;
+                    width: fit-content;
+                    border-radius: 15px;
+                    padding: 5px;
+
+                    &__left {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        padding: 5px;
+                        &--content {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+
+                            div {
+                                padding-top: 5px;
+                            }
+                        }
+                    }
+
+                    &__right {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        padding: 5px;
+                        &--content {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+                            justify-content: center;
+                            align-items: center;
+
+                            div {
+                                padding-top: 5px;
+                            }
+                        }
+                    }
+
+                    &__add {
+                        border: 1px solid #DADADA;
+                        width: fit-content;
+                        border-radius: 15px;
+                        padding: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+
+                        &--input {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 15px;
+
+                            select {
+                                width: 100%;
+                                padding: 5px;
+                                border-radius: 15px;
+                                border: 1px solid #DADADA;
+    
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+    
+                            input {
+                                font-size: 16px;
+                                color: #000C1A;
+                                min-height: 30px;
+                                padding: 5px 10px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                border-radius: 15px;    
+                                border: 1px solid #DADADA;
+                                
+                                &:focus {
+                                    outline: none;
+                                    border: none;
+                                    border: 1.5px solid #2F80ED;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+  }
+  

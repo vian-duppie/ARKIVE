@@ -1,0 +1,39 @@
+:host {
+    display: contents;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #DADADA;
+    font-size: 20px;
+
+    .logo {
+        display: block;
+
+        img {
+            max-height: 40px;
+        }
+    }
+
+    .links {
+        display: flex;
+        gap: 30px;
+
+        a {
+            text-decoration: none;
+        }
+
+        .active {
+            color: #00D6AB;
+            font-weight: bold;
+        }
+    }
+}

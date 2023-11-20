@@ -1,0 +1,28 @@
+@import '../../../styles.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    .active {
+        border: 4px solid #000C1A;
+        border-radius: 50%;
+    }
+
+    &--button {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #ADADAD;
+        border-radius: 50%;
+    }
+
+    &--value {
+        h3 {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}

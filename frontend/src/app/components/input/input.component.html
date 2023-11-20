@@ -1,0 +1,40 @@
+<div class="outer">
+    <div 
+        class=
+            "
+                container 
+                {{props.style || 'line'}} 
+                {{inputState}} 
+                {{props.error ? 'error' : '' || ''}}
+            "    
+    >
+        <div class="container--input">
+            <input 
+                (blur)="onBlur()"
+                (focus)="onFocus()" 
+                [(ngModel)]="props.value" 
+                (ngModelChange)="onInputChange(props.value ?? '')"
+                placeholder={{props.placeholder}}
+                [style]="props.style || 'line'"
+                [type]="props.type == 'text' ? 'text' : props.type == 'password' && showPassword ? 'text' : 'password'"
+            />
+
+            <img
+                *ngIf="props.type == 'password'"
+                src="{{!this.showPassword ? '../../../assets/icons/ic_eye_show.svg' : '../../../assets/icons/ic_eye_hide.svg'}}"
+                (click)="changePasswordVisibility()"
+            />
+        </div>
+    </div>
+    <div 
+        class="container--message"
+        *ngIf="props.message != ''"    
+    >
+        <img 
+            *ngIf="props.messageSrc != ''"
+            src={{props.messageSrc}} 
+            alt=""
+        >
+        <p>{{props.message}}</p>
+    </div>
+</div>
